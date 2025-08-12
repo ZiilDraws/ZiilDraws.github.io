@@ -75,11 +75,24 @@ body {
   font-size: calc(max(1.8vw, 2vh));
 }
 
-.logo {
+.bottom-bar {
   position: fixed;
-  top: 3vh;
-  right: 3vh;
-  width: calc(max(8vw, 10vh));
+  bottom: 0;
+  left: 0;
+  width: 100%;             
+  padding: 1vh 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.bottom-bar svg {
+  height: 6vh;
+  width: auto;
+  background-color: rgba(0,0,0,0.0);
+  border-radius: 1vh;
+  padding: 1.5vh;  
 }
 
 @media (prefers-color-scheme: dark) {
