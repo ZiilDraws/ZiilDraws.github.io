@@ -1,0 +1,40 @@
+body {
+  font-family: Arial, sans-serif;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  margin: 0;
+  font-size: 2vh;
+  width: auto;
+}
+
+h2 {
+  font-size: 3vh;
+}
+
+.container {
+  text-align: center;
+  max-width: calc(max(20vw, 40vh));
+  width: 100%;
+}
+
+.mainimage {
+  width: calc(max(20vw, 40vh));
+  margin-top: 5vh;
+  display: flex;
+  justify-content: center;
+}
+
+.logo {
+  margin-top: 5vh;
+  width: calc(max(10vw, 20vh));
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #121212;
+    color: white;
+  }
+}

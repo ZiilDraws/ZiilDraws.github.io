@@ -1,0 +1,181 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  background: #FFF;
+}
+
+@media (prefers-color-scheme: dark) {
+  html, body {
+    background: #121212;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.section {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  pointer-events: auto;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: transform 0.6s ease;
+  z-index: -1;
+}
+
+.section span {
+  font-family: 'Arial', 'Helvetica', sans-serif;
+  font-weight: 900;
+  color: white;
+  text-align: center;
+  z-index: 1;
+  letter-spacing: 0.5px;
+  transition: text-shadow 0.4s ease, transform 0.4s ease;
+}
+
+/* hover effect */
+.section:hover span {
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.9),
+               0 0 20px rgba(0, 0, 0, 0.8),
+               0 0 30px rgba(0, 0, 0, 0.7);
+  transform: scale(1.15);
+}
+
+.green::before { 
+  background-image: url("https://i.imgur.com/TxbKiU8.png"); 
+}
+
+.red::before { 
+  background-image: url("https://i.imgur.com/sMllpDL.png"); 
+}
+
+.blue::before { 
+  background-image: url("https://i.imgur.com/XOU1TVG.png"); 
+}
+
+.bottom-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;             
+  padding: 1vh 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.bottom-bar svg {
+  height: 10vh;
+  width: auto;
+  background-color: rgba(0,0,0,0.4);
+  border-radius: 1vh;
+  padding: 1.5vh;  
+}
+
+
+@media (min-aspect-ratio: 9/10) {
+  .section::before {
+	background-size: calc(max(50vw, 100vh / 1.44)) calc(max(50vw * 1.44, 100vh));
+  }
+  .section span {
+	font-size: 2.8vw;
+  }
+  .green {
+    clip-path: polygon(0 0, 40% 0, 26% 100%, 0 100%);
+	justify-content: flex-start;
+	padding-left: 6vw;
+	padding-bottom: 20vh;
+  }
+  .red {
+    clip-path: polygon(41% 0, 73% 0, 59% 100%, 27% 100%);
+	justify-content: center;
+  }
+  .blue {
+    clip-path: polygon(74% 0, 100% 0, 100% 100%, 60% 100%);
+	justify-content: flex-end;
+    padding-right: 6vw;
+	padding-top: 20vh;
+  }
+  .green::before { 
+	background-position: 0vw top;
+  }
+
+  .red::before { 
+	background-position: center top;
+  }
+
+  .blue::before { 
+	background-position: 50vw top;
+  }
+}
+
+@media (max-aspect-ratio: 9/10) {
+  .section::before {
+	background-size: 100vw auto;
+  }
+  .section span {
+	font-size: 3.5vh;
+  }
+  .green {
+    clip-path: polygon(0 0, 100% 0%, 100% 25%, 0 30%);
+  }
+  .red {
+    clip-path: polygon(0 31%, 100% 26%, 100% 69%, 0 74%);
+  }
+  .blue {
+    clip-path: polygon(0 75%, 100% 70%, 100% 100%, 0 100%);
+  }
+  .green span {
+    position: absolute;
+	top: 12vh;
+  }
+  .blue span {
+    position: absolute;
+	bottom: 12vh;
+  }
+  .green::before { 
+	background-position: center top;
+  }
+
+  .red::before { 
+	background-position: center 26vh;
+  }
+
+  .blue::before { 
+	background-position: center 68vh;
+  }
+}
+
+.section:hover::before {
+  transform: scale(1.05);
+}
