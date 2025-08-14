@@ -10,19 +10,19 @@ body {
 
 @media (prefers-color-scheme: dark) {
   h2 {
-	color: #000;
+	color: #FFF;
   }
   .link {
-	color: #000;
+	color: #FFF;
   }
 }
 
 @media (prefers-color-scheme: light) {
   h2 {
-	color: #FFF;
+	color: #000;
   }
   .link {
-	color: #FFF;
+	color: #000;
   }
 }
 
