@@ -8,39 +8,8 @@ body {
   margin: 0;
 }
 
-@media (prefers-color-scheme: dark) {
-  h2 {
-	color: #FFF;
-  }
-  .link {
-	color: #FFF;
-  }
-}
-
-@media (prefers-color-scheme: light) {
-  h2 {
-	color: #000;
-  }
-  .link {
-	color: #000;
-  }
-}
-
-@media (min-aspect-ratio: 1/1) {
-  body {
-    background: url('https://i.imgur.com/f5GT8im.jpeg');
-	background-size: 100% 100%;
-  }
-}
-
-@media (max-aspect-ratio: 1/1) {
-  body {
-    background: url('https://i.imgur.com/xdJQ4ZU.jpeg');
-	background-size: 100% 100%;
-  }
-}
-
 h2 {
+  color: black;
   font-size: 3vh;
 }
 
@@ -60,11 +29,12 @@ h2 {
 .link {
   display: block;
   text-decoration: none;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(255, 255, 255, 0.3);
   padding: 1.5vh;
   margin: 0.5vh 0;
   font-size: 2vh;
   transition: background-color 0.3s ease;
+  color: black;
 }
 
 .link:hover {
@@ -75,4 +45,29 @@ h2 {
   margin-top: 3vh;
   margin-bottom: 3vh;
   max-width: calc(max(10vw, 20vh));
+}
+
+
+@media (prefers-color-scheme: dark) {
+  h2 {
+	color: white;
+  }
+  .link {
+	color: white;
+	background-color: rgba(0, 0, 0, 0.3);
+  }
+}
+
+@media (min-aspect-ratio: 1/1) {
+  body {
+    background: url('https://i.imgur.com/f5GT8im.jpeg');
+	background-size: 100% 100%;
+  }
+}
+
+@media (max-aspect-ratio: 1/1) {
+  body {
+    background: url('https://i.imgur.com/xdJQ4ZU.jpeg');
+	background-size: 100% 100%;
+  }
 }
