@@ -21,9 +21,9 @@ const bg = document.getElementById('parallax-bg');
 
 bg.style.height = `${document.body.scrollHeight}px`;
 
-bg.style.backgroundPositionY = `${window.pageYOffset * 0.5}px`;
+bg.style.backgroundPositionY = `${window.pageYOffset * 0.6}px`;
 
 window.addEventListener('scroll', () => {
   const scrollTop = window.pageYOffset;
-  bg.style.backgroundPositionY = `${scrollTop * 0.5}px`;
+  bg.style.backgroundPositionY = `${scrollTop * 0.6}px`;
 });
