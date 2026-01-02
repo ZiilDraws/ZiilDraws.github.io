@@ -95,6 +95,138 @@ body {
   padding: 1.5vh;  
 }
 
+/* NEW LAYOUT STYLES */
+
+/* Wrapper to hold text and buttons side-by-side */
+.info-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.text-col {
+  flex: 1;
+  padding-right: 20px;
+}
+
+.btn-col {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
+}
+
+.sq-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  border: 2px solid #ccc;
+  cursor: pointer;
+  background: transparent;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+}
+
+.folder-btn svg {
+  width: 30px;
+  height: 30px;
+  stroke: #777;
+}
+
+.ref-btn {
+  font-size: 14px;
+  color: #777;
+}
+
+.sq-btn:hover {
+  transform: scale(1.05);
+  border-color: #555;
+}
+
+.sq-btn:hover svg {
+  stroke: #000;
+}
+.sq-btn:hover.ref-btn {
+  color: #000;
+}
+
+@media (prefers-color-scheme: dark) {
+  .sq-btn {
+    border-color: #555;
+    color: #ccc;
+  }
+  .folder-btn svg {
+    stroke: #ccc;
+  }
+  .sq-btn:hover {
+    border-color: #fff;
+    color: #fff;
+    background: #444;
+  }
+  .sq-btn:hover svg {
+    stroke: #fff;
+  }
+}
+
+.lightbox-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 10000;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(2px);
+}
+
+.lightbox-overlay.active {
+  display: flex;
+}
+
+.lightbox-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.image-frame {
+  padding: 8px; /* Slim frame */
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  pointer-events: auto;
+}
+
+.image-frame img {
+  max-width: 80vw;
+  max-height: 80vh;
+  display: block;
+}
+
+.close-x {
+  margin-top: 15px;
+  color: white;
+  font-family: sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  pointer-events: auto;
+  opacity: 0.8;
+}
+
 @media (prefers-color-scheme: dark) {
   body {
 	background: #303030;
@@ -108,3 +240,4 @@ body {
 	color: black;
   }
 }
+
