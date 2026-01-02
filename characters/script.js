@@ -18,12 +18,35 @@ document.querySelectorAll('.character-info').forEach(section => {
 
 // Parallax background effect
 const bg = document.getElementById('parallax-bg');
+// Ensure bg exists before setting properties to prevent errors on pages without it
+if (bg) {
+    bg.style.height = `${document.body.scrollHeight}px`;
+    bg.style.backgroundPositionY = `${window.pageYOffset * 0.6}px`;
 
-bg.style.height = `${document.body.scrollHeight}px`;
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.pageYOffset;
+      bg.style.backgroundPositionY = `${scrollTop * 0.6}px`;
+    });
+}
 
-bg.style.backgroundPositionY = `${window.pageYOffset * 0.6}px`;
+const lightbox = document.getElementById('ref-lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const refButtons = document.querySelectorAll('.ref-btn');
 
-window.addEventListener('scroll', () => {
-  const scrollTop = window.pageYOffset;
-  bg.style.backgroundPositionY = `${scrollTop * 0.6}px`;
+refButtons.forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    e.stopPropagation(); // Prevent bubbling
+    const imgSrc = btn.getAttribute('data-ref-img');
+    
+    if (imgSrc) {
+      lightboxImg.src = imgSrc;
+      lightbox.classList.add('active');
+    }
+  });
 });
+
+if (lightbox) {
+    lightbox.addEventListener('click', () => {
+      lightbox.classList.remove('active');
+    });
+}
